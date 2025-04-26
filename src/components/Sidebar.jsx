@@ -73,8 +73,8 @@ const Sidebar = ({toggleSidebar}) => {
       {/* Header */}
       <div className="flex h-[61px] justify-between items-center border-b border-gray-200 dark:border-gray-800 px-4">
         <div className="flex items-center gap-2">
-          <div className="rounded-md bg-blue-600 p-1">
-            <span className="text-lg font-bold text-white">TS</span>
+          <div className="rounded-md  p-1">
+            <img src="/sciicon.png" className="h-8" alt="" />
           </div>
           <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">
             TheSci ERP
