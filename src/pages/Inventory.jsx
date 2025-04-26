@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/card-updated";
 
 const Inventory = () => {
   const { t } = useTranslation();
@@ -27,10 +27,10 @@ const Inventory = () => {
     <div className="p-4 md:p-6 lg:p-8 space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">{t('inventory_management')}</h1>
-          <p className="text-muted-foreground">{t('inventory_description')}</p>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">{t('inventory')}</h1>
+          <p className="text-muted-foreground">{t('inventory_welcome_message')}</p>
         </div>
-        <button className="bg-primary text-white px-4 py-2 rounded-md font-semibold hover:bg-primary/90 whitespace-nowrap">
+        <button className="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 whitespace-nowrap dark:bg-blue-700 dark:hover:bg-blue-800">
           + {t('add_product')}
         </button>
       </div>
@@ -38,21 +38,21 @@ const Inventory = () => {
       <Card>
         <CardHeader className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
           <div>
-            <CardTitle>{t('products')}</CardTitle>
-            <CardDescription>{t('products_subtext')}</CardDescription>
+            <CardTitle>{t('inventory')}</CardTitle>
+            <CardDescription>{t('inventory_welcome_message')}</CardDescription>
           </div>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <input
               type="text"
-              placeholder={t('search_placeholder')}
+              placeholder={t('search_inventory')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="border px-3 py-2 rounded-md w-full"
+              className="border px-3 py-2 rounded-md w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             />
             <select
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value)}
-              className="border px-3 py-2 rounded-md w-full sm:w-auto"
+              className="border px-3 py-2 rounded-md w-full sm:w-auto dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             >
               <option value="all">{t('all_categories')}</option>
               {categories.map((cat) => (
@@ -66,14 +66,14 @@ const Inventory = () => {
           <div className="min-w-full inline-block align-middle">
             <div className="overflow-hidden">
               <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 table-auto">
-                <thead className="bg-muted text-muted-foreground">
+                <thead className="bg-muted text-muted-foreground dark:bg-gray-700 dark:text-gray-200">
                   <tr>
-                    <th className="px-4 md:px-6 py-3 text-left font-semibold">{t('product')}</th>
-                    <th className="px-4 md:px-6 py-3 text-left font-semibold hidden md:table-cell">{t('sku')}</th>
+                    <th className="px-4 md:px-6 py-3 text-left font-semibold">{t('product_name')}</th>
+                    <th className="px-4 md:px-6 py-3 text-left font-semibold hidden md:table-cell">SKU</th>
                     <th className="px-4 md:px-6 py-3 text-left font-semibold hidden sm:table-cell">{t('category')}</th>
                     <th className="px-4 md:px-6 py-3 text-left font-semibold">{t('stock')}</th>
                     <th className="px-4 md:px-6 py-3 text-left font-semibold">{t('price')}</th>
-                    <th className="px-4 md:px-6 py-3 text-left font-semibold hidden lg:table-cell">{t('gst')}</th>
+                    <th className="px-4 md:px-6 py-3 text-left font-semibold hidden lg:table-cell">GST</th>
                     <th className="px-4 md:px-6 py-3 text-left font-semibold">{t('actions')}</th>
                   </tr>
                 </thead>
@@ -85,11 +85,11 @@ const Inventory = () => {
                       <td className="px-4 md:px-6 py-4 hidden sm:table-cell">{product.category}</td>
                       <td className="px-4 md:px-6 py-4">
                         {product.stock > 10 ? (
-                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
                             {t('in_stock')}
                           </span>
                         ) : (
-                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
                             {t('low_stock')}
                           </span>
                         )}

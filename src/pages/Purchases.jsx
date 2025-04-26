@@ -88,8 +88,8 @@ const Purchases = () => {
   return (
     <div className="p-4">
       <div className="mb-4">
-        <h1 className="text-xl font-semibold">purchase_management</h1>
-        <p className="text-gray-500 dark:text-gray-400">purchase_description</p>
+        <h1 className="text-xl font-semibold">{t("purchase_management")}</h1>
+        <p className="text-gray-500 dark:text-gray-400">{t("purchase_description")}</p>
       </div>
 
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-4">
@@ -97,7 +97,7 @@ const Purchases = () => {
           <div className="relative w-full md:max-w-xl">
             <input
               type="text"
-              placeholder="search_purchases"
+              placeholder={t("search_purchases")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700"
@@ -116,10 +116,10 @@ const Purchases = () => {
                 onChange={(e) => setStatusFilter(e.target.value)}
                 className="appearance-none pl-3 pr-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 w-full"
               >
-                <option value="all_statuses">all_statuses</option>
-                <option value="received">Received</option>
-                <option value="pending">Pending</option>
-                <option value="ordered">Ordered</option>
+                <option value="all_statuses">{t("all_statuses")}</option>
+                <option value="received">{t("received")}</option>
+                <option value="pending">{t("pending")}</option>
+                <option value="ordered">{t("ordered")}</option>
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                 <Filter className="h-4 w-4 text-gray-400" />
@@ -132,7 +132,7 @@ const Purchases = () => {
 
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center whitespace-nowrap">
               <span className="mr-2">+</span>
-              <span>new_purchase</span>
+              <span>{t("new_purchase")}</span>
             </button>
           </div>
         </div>
@@ -144,28 +144,28 @@ const Purchases = () => {
                 <thead className="bg-gray-50 dark:bg-gray-800">
                   <tr>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      po_number
+                      {t("po_number")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider hidden sm:table-cell">
-                      date
+                      {t("date")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Supplier
+                      {t("supplier")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Amount
+                      {t("amount")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider hidden lg:table-cell">
                       GST
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider hidden md:table-cell">
-                      invoice
+                      {t("invoice")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Status
+                      {t("status")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Actions
+                      {t("actions")}
                     </th>
                   </tr>
                 </thead>
@@ -199,7 +199,7 @@ const Purchases = () => {
                       </td>
                       <td className="px-4 md:px-6 py-4 whitespace-nowrap">
                         <span className={getStatusBadgeClass(purchase.status)}>
-                          {purchase.status}
+                          {t(purchase.status === 'received' ? 'received' : purchase.status === 'pending' ? 'pending' : 'ordered')}
                         </span>
                       </td>
                       <td className="px-4 md:px-6 py-4 whitespace-nowrap text-sm font-medium">

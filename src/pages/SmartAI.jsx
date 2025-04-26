@@ -295,23 +295,23 @@ const SmartAI = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">SmartAI Assistant</h1>
+      <h1 className="text-2xl font-bold mb-6">{t("smartai_assistant")}</h1>
 
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Left Column - Main Content */}
         <div className="w-full lg:w-7/12 space-y-6">
           {/* AI Inventory Planner */}
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
             <div className="flex items-center gap-2 mb-2">
               <Calendar className="h-5 w-5 text-blue-500" />
-              <h2 className="text-lg font-semibold">AI Inventory Planner</h2>
+              <h2 className="text-lg font-semibold">{t("ai_inventory_planner")}</h2>
             </div>
-            <p className="text-sm text-gray-500 mb-6">AI-powered inventory recommendations</p>
+            <p className="text-sm text-gray-500 mb-6">{t("ai_inventory_description")}</p>
 
             {/* Predictive Restocking */}
             <div className="mb-6">
               <h3 className="font-medium mb-3 flex items-center gap-2">
-                <TrendingUp className="h-4 w-4" /> Predictive Restocking
+                <TrendingUp className="h-4 w-4" /> {t("predictive_restocking")}
               </h3>
               <div className="space-y-2">
                 {predictiveRestocking.map((item, index) => (
@@ -326,14 +326,14 @@ const SmartAI = () => {
             {/* Inventory Burn Rate */}
             <div className="mb-6">
               <h3 className="font-medium mb-3 flex items-center gap-2">
-                <Clock className="h-4 w-4" /> Inventory Burn Rate
+                <Clock className="h-4 w-4" /> {t("inventory_burn_rate")}
               </h3>
               <div className="space-y-3">
                 {inventoryBurnRate.map((item, index) => (
                   <div key={index}>
                     <div className="flex justify-between mb-1">
                       <span>{item.name}</span>
-                      <span className="text-sm">{item.days} days left</span>
+                      <span className="text-sm">{item.days} {t("days_left")}</span>
                     </div>
                     <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                       <div
@@ -352,16 +352,16 @@ const SmartAI = () => {
             {/* Overstock Alert */}
             <div>
               <h3 className="font-medium mb-3 flex items-center gap-2">
-                <AlertTriangle className="h-4 w-4" /> Overstock Alert
+                <AlertTriangle className="h-4 w-4" /> {t("overstock_alert")}
               </h3>
               <div className="space-y-2">
                 {overstockAlert.map((item, index) => (
                   <div key={index} className="bg-white border rounded-md p-3">
                     <div className="flex justify-between items-center">
                       <span className="font-medium">{item.name}</span>
-                      <span className="text-gray-700 font-medium">{item.units} units</span>
+                      <span className="text-gray-700 font-medium">{item.units} {t("units")}</span>
                     </div>
-                    <div className="text-gray-500 text-sm">Suggestion: {item.suggestion}</div>
+                    <div className="text-gray-500 text-sm">{t("suggestion")}: {item.suggestion}</div>
                   </div>
                 ))}
               </div>
@@ -369,12 +369,12 @@ const SmartAI = () => {
           </div>
 
           {/* Smart Expense & Purchase Suggestions */}
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
             <div className="flex items-center gap-2 mb-2">
               <DollarSign className="h-5 w-5 text-green-500" />
-              <h2 className="text-lg font-semibold">Smart Expense & Purchase Suggestions</h2>
+              <h2 className="text-lg font-semibold">{t("smart_expense")}</h2>
             </div>
-            <p className="text-sm text-gray-500 mb-6">AI-recommended ways to optimize costs and purchases</p>
+            <p className="text-sm text-gray-500 mb-6">{t("smart_expense_description")}</p>
 
             <div className="space-y-4">
               {expenseSuggestions.map((suggestion, index) => (
@@ -402,21 +402,21 @@ const SmartAI = () => {
           </div>
 
           {/* AI Business Insights Dashboard */}
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
             <div className="flex items-center gap-2 mb-2">
               <Lightbulb className="h-5 w-5 text-yellow-500" />
-              <h2 className="text-lg font-semibold">AI Business Insights Dashboard</h2>
+              <h2 className="text-lg font-semibold">{t("ai_business_insights")}</h2>
             </div>
-            <p className="text-sm text-gray-500 mb-6">Today's AI-generated business summary and recommendations</p>
+            <p className="text-sm text-gray-500 mb-6">{t("ai_business_description")}</p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Revenue vs Expense Trend */}
               <div className="w-full">
-                <h3 className="font-medium mb-2">Revenue vs Expense Trend</h3>
+                <h3 className="font-medium mb-2">{t("revenue_expense_trend")}</h3>
                 {renderAreaChart()}
 
                 <div className="mt-4">
-                  <p className="text-sm font-medium">AI Analysis:</p>
+                  <p className="text-sm font-medium">{t("ai_analysis")}</p>
                   <p className="text-sm text-gray-600">
                     Your revenue has been increasing since May, while expenses are stabilizing. Continue the current strategy.
                   </p>
@@ -425,7 +425,7 @@ const SmartAI = () => {
 
               {/* Top Performing Products */}
               <div>
-                <h3 className="font-medium mb-2">Top Performing Products</h3>
+                <h3 className="font-medium mb-2">{t("top_performing_products")}</h3>
                 <div className="space-y-2">
                   {topProducts.map((product, index) => (
                     <div key={index} className="bg-white border rounded-md p-3">
@@ -438,7 +438,7 @@ const SmartAI = () => {
                   ))}
                 </div>
 
-                <h3 className="font-medium mt-6 mb-2">Underperforming SKUs</h3>
+                <h3 className="font-medium mt-6 mb-2">{t("underperforming_skus")}</h3>
                 <div className="space-y-2">
                   {underperformingProducts.map((product, index) => (
                     <div key={index} className="bg-white border rounded-md p-3">
@@ -455,7 +455,7 @@ const SmartAI = () => {
 
             {/* Smart Suggestions */}
             <div className="mt-8">
-              <h3 className="font-medium mb-4">Smart Suggestions</h3>
+              <h3 className="font-medium mb-4">{t("smart_suggestions")}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {suggestions.map((suggestion, index) => (
                   <div key={index} className={`${suggestion.color} p-4 rounded-md flex items-start gap-3`}>
@@ -469,9 +469,9 @@ const SmartAI = () => {
             <div className="mt-8">
               <div className="flex items-center gap-2 mb-2">
                 <Gift className="h-5 w-5 text-purple-500" />
-                <h2 className="text-lg font-semibold">Festival & Seasonal Preparation</h2>
+                <h2 className="text-lg font-semibold">{t("festival_seasonal")}</h2>
               </div>
-              <p className="text-sm text-gray-500 mb-4">AI-powered recommendations for upcoming festivals and seasons</p>
+              <p className="text-sm text-gray-500 mb-4">{t("festival_description")}</p>
 
               {/* Tabs */}
               <div className="flex border-b mb-4">
@@ -490,7 +490,7 @@ const SmartAI = () => {
                 ))}
                 <div className="ml-auto">
                   <button className="flex items-center text-sm text-gray-500">
-                    <Calendar className="h-4 w-4 mr-1" /> Calendar View
+                    <Calendar className="h-4 w-4 mr-1" /> {t("calendar_view")}
                   </button>
                 </div>
               </div>
@@ -500,7 +500,7 @@ const SmartAI = () => {
                 <h3 className="font-medium text-lg">{activeTab}</h3>
                 <p className="text-sm text-gray-500 mb-4">{festivalRecommendations[activeTab].date}</p>
 
-                <div className="mb-2 font-medium">AI Recommendations:</div>
+                <div className="mb-2 font-medium">{t("ai_recommendations")}</div>
                 <div className="space-y-2">
                   {festivalRecommendations[activeTab].recommendations.map((rec, index) => (
                     <div key={index} className="border rounded-md p-3 flex items-start gap-3">
@@ -514,7 +514,7 @@ const SmartAI = () => {
 
                 <div className="mt-4 flex justify-end">
                   <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium flex items-center">
-                    One-Click Stock Plan <ArrowUp className="h-4 w-4 ml-1 rotate-45" />
+                    {t("one_click_stock")} <ArrowUp className="h-4 w-4 ml-1 rotate-45" />
                   </button>
                 </div>
               </div>
@@ -523,20 +523,20 @@ const SmartAI = () => {
             {/* Bottom Row - Two Cards Side by Side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               {/* AI Trend Explorer */}
-              <div className="bg-white rounded-lg shadow p-6">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
                 <div className="flex items-center gap-2 mb-2">
                   <TrendingUp className="h-5 w-5 text-blue-500" />
-                  <h2 className="text-lg font-semibold">AI Trend Explorer</h2>
+                  <h2 className="text-lg font-semibold">{t("ai_trend_explorer")}</h2>
                 </div>
-                <p className="text-sm text-gray-500 mb-4">Analyze product trends and forecasts</p>
+                <p className="text-sm text-gray-500 mb-4">{t("ai_trend_description")}</p>
 
                 <div className="relative mb-4">
                   <input
                     type="text"
-                    placeholder="Enter product name or category"
+                    placeholder={t("enter_product")}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full border rounded-md py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full border rounded-md py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                   />
                   <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-1 rounded">
                     <Search className="h-4 w-4" />
@@ -556,12 +556,12 @@ const SmartAI = () => {
               </div>
 
               {/* Magic Actions */}
-              <div className="bg-white rounded-lg shadow p-6">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
                 <div className="flex items-center gap-2 mb-2">
                   <Sparkles className="h-5 w-5 text-yellow-500" />
-                  <h2 className="text-lg font-semibold">Magic Actions</h2>
+                  <h2 className="text-lg font-semibold">{t("magic_actions")}</h2>
                 </div>
-                <p className="text-sm text-gray-500 mb-4">One-click AI-powered business actions</p>
+                <p className="text-sm text-gray-500 mb-4">{t("magic_actions_description")}</p>
 
                 <div className="space-y-3">
                   {magicActions.map((action, index) => (
@@ -587,18 +587,18 @@ const SmartAI = () => {
             </div>
 
             {/* Admin Controls */}
-            <div className="bg-white rounded-lg shadow p-6 mt-8">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 mt-8">
               <div className="flex items-center gap-2 mb-2">
                 <Settings className="h-5 w-5 text-gray-700" />
-                <h2 className="text-lg font-semibold">Admin Controls</h2>
+                <h2 className="text-lg font-semibold">{t("admin_controls")}</h2>
               </div>
-              <p className="text-sm text-gray-500 mb-6">Manage AI features and review actions</p>
+              <p className="text-sm text-gray-500 mb-6">{t("admin_controls_description")}</p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Module Controls */}
                 <div>
                   <h3 className="font-medium mb-4 flex items-center gap-2">
-                    <Settings className="h-4 w-4" /> Module Controls
+                    <Settings className="h-4 w-4" /> {t("module_controls")}
                   </h3>
                   <div className="space-y-3">
                     {moduleControls.map((module, index) => (
@@ -618,7 +618,7 @@ const SmartAI = () => {
                 {/* Recent AI Actions */}
                 <div>
                   <h3 className="font-medium mb-4 flex items-center gap-2">
-                    <Clock className="h-4 w-4" /> Recent AI Actions
+                    <Clock className="h-4 w-4" /> {t("recent_ai_actions")}
                   </h3>
                   <div className="space-y-3">
                     {recentAIActions.map((item, index) => (
@@ -650,15 +650,15 @@ const SmartAI = () => {
 
         {/* Right Column - AI Chat Assistant */}
         <div className="w-full lg:w-5/12 lg:sticky lg:top-6 self-start">
-          <div className="bg-white rounded-lg shadow">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow">
             <div className="p-6 border-b">
               <div className="flex items-center gap-2 mb-2">
                 <div className="h-5 w-5 bg-blue-500 rounded-md flex items-center justify-center text-white">
                   <span className="text-xs font-bold">AI</span>
                 </div>
-                <h2 className="text-lg font-semibold">AI Chat Assistant</h2>
+                <h2 className="text-lg font-semibold">{t("ai_chat_assistant")}</h2>
               </div>
-              <p className="text-sm text-gray-500">Ask anything about your business</p>
+              <p className="text-sm text-gray-500">{t("ai_chat_description")}</p>
             </div>
 
             <div className="h-[30vh] min-h-[250px] max-h-[400px] overflow-y-auto p-4">
@@ -675,7 +675,7 @@ const SmartAI = () => {
 
             {/* Quick Questions */}
             <div className="p-4 border-t">
-              <p className="text-sm font-medium mb-3">Try asking:</p>
+              <p className="text-sm font-medium mb-3">{t("try_asking")}</p>
               <div className="grid grid-cols-2 gap-2">
                 {quickQuestions.map((question, index) => (
                   <div
@@ -693,10 +693,10 @@ const SmartAI = () => {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Ask any business question..."
+                  placeholder={t("ask_business_question")}
                   value={chatMessage}
                   onChange={(e) => setChatMessage(e.target.value)}
-                  className="w-full border rounded-md py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border rounded-md py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 />
                 <button
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-700"

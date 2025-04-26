@@ -1,0 +1,170 @@
+/* Dark Theme Fixes */
+
+/* General Card Styles */
+.dark .bg-white {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+
+.dark .border {
+  border-color: #374151;
+}
+
+.dark .shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Colors */
+.dark .text-gray-500 {
+  color: #9ca3af;
+}
+
+.dark .text-gray-600, 
+.dark .text-gray-700, 
+.dark .text-gray-800 {
+  color: #e5e7eb;
+}
+
+.dark .text-muted-foreground {
+  color: #9ca3af;
+}
+
+/* Input Fields */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #9ca3af;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* Table Styles */
+.dark table {
+  color: #f3f4f6;
+}
+
+.dark .bg-muted {
+  background-color: #374151;
+}
+
+.dark .divide-gray-200,
+.dark .divide-gray-700 {
+  border-color: #4b5563;
+}
+
+.dark .hover\:bg-muted\/50:hover {
+  background-color: rgba(55, 65, 81, 0.5);
+}
+
+/* Status Indicators */
+.dark .bg-green-100 {
+  background-color: rgba(16, 185, 129, 0.2);
+}
+
+.dark .bg-yellow-100 {
+  background-color: rgba(245, 158, 11, 0.2);
+}
+
+.dark .bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.dark .text-green-800 {
+  color: #10b981;
+}
+
+.dark .text-yellow-800 {
+  color: #f59e0b;
+}
+
+.dark .text-red-800 {
+  color: #ef4444;
+}
+
+/* Smart AI Page Specific */
+.dark .bg-gray-100 {
+  background-color: #374151;
+}
+
+.dark .bg-gray-200 {
+  background-color: #4b5563;
+}
+
+.dark .hover\:bg-gray-50:hover,
+.dark .hover\:bg-gray-100:hover,
+.dark .hover\:bg-gray-200:hover {
+  background-color: #4b5563;
+}
+
+/* Settings Page Specific */
+.dark .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+.dark .bg-blue-900 {
+  background-color: #1e3a8a;
+}
+
+.dark .text-blue-600 {
+  color: #60a5fa;
+}
+
+.dark .text-blue-700 {
+  color: #3b82f6;
+}
+
+/* Toggle Switches */
+.dark .bg-gray-300 {
+  background-color: #4b5563;
+}
+
+/* Progress Bars */
+.dark .bg-red-500,
+.dark .bg-yellow-500,
+.dark .bg-green-500 {
+  opacity: 0.8;
+}
+
+/* Buttons */
+.dark button.bg-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.dark button.bg-primary:hover {
+  background-color: #2563eb;
+}
+
+.dark button.bg-gray-900 {
+  background-color: #1f2937;
+  border: 1px solid #4b5563;
+}
+
+.dark button.text-blue-600 {
+  color: #60a5fa;
+}
+
+.dark button.text-blue-600:hover {
+  color: #93c5fd;
+}
+
+/* Dropdown Menus */
+.dark .bg-gray-800 {
+  background-color: #1f2937;
+}
+
+.dark .hover\:bg-gray-700:hover {
+  background-color: #374151;
+}

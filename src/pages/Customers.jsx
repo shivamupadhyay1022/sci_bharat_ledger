@@ -65,19 +65,19 @@ const Customers = () => {
       customer.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       customer.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
       customer.contact.includes(searchQuery);
-    
-    const matchesType = 
-      typeFilter === "all_types" || 
+
+    const matchesType =
+      typeFilter === "all_types" ||
       customer.type === typeFilter;
-    
+
     return matchesSearch && matchesType;
   });
 
   return (
     <div className="p-4">
       <div className="mb-4">
-        <h1 className="text-xl font-semibold">customer_management</h1>
-        <p className="text-gray-500 dark:text-gray-400">customer_description</p>
+        <h1 className="text-xl font-semibold">{t("customer_management")}</h1>
+        <p className="text-gray-500 dark:text-gray-400">{t("customer_description")}</p>
       </div>
 
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-4">
@@ -85,7 +85,7 @@ const Customers = () => {
           <div className="relative w-full md:max-w-xl">
             <input
               type="text"
-              placeholder="search_customers"
+              placeholder={t("search_customers")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700"
@@ -104,9 +104,9 @@ const Customers = () => {
                 onChange={(e) => setTypeFilter(e.target.value)}
                 className="appearance-none pl-3 pr-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 w-full"
               >
-                <option value="all_types">all_types</option>
-                <option value="business">Business</option>
-                <option value="individual">Individual</option>
+                <option value="all_types">{t("all_types")}</option>
+                <option value="business">{t("business")}</option>
+                <option value="individual">{t("individual")}</option>
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                 <Filter className="h-4 w-4 text-gray-400" />
@@ -120,7 +120,7 @@ const Customers = () => {
 
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center whitespace-nowrap">
             <span className="mr-2">+</span>
-            <span>new_customer</span>
+            <span>{t("new_customer")}</span>
           </button>
         </div>
 
@@ -131,25 +131,25 @@ const Customers = () => {
                 <thead className="bg-gray-50 dark:bg-gray-800">
                   <tr>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Customer
+                      {t("customer")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider hidden sm:table-cell">
-                      contact
+                      {t("contact")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider hidden md:table-cell">
-                      email
+                      {t("email")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider hidden lg:table-cell">
-                      gstin
+                      {t("gstin")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider hidden md:table-cell">
-                      location
+                      {t("location")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      total_purchases
+                      {t("total_purchases")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Actions
+                      {t("actions")}
                     </th>
                   </tr>
                 </thead>
@@ -163,7 +163,7 @@ const Customers = () => {
                           </div>
                           <div className="ml-4">
                             <div className="text-sm font-medium text-gray-900 dark:text-gray-100">{customer.name}</div>
-                            <div className="text-xs text-gray-500">{customer.type}</div>
+                            <div className="text-xs text-gray-500">{t(customer.type)}</div>
                           </div>
                         </div>
                       </td>

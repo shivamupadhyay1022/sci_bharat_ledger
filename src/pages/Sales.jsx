@@ -88,8 +88,8 @@ const Sales = () => {
   return (
     <div className="p-4">
       <div className="mb-4">
-        <h1 className="text-xl font-semibold">sales_management</h1>
-        <p className="text-gray-500 dark:text-gray-400">sales_description</p>
+        <h1 className="text-xl font-semibold">{t('sales_page')}</h1>
+        <p className="text-gray-500 dark:text-gray-400">{t('sales_welcome_message')}</p>
       </div>
 
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-4">
@@ -97,7 +97,7 @@ const Sales = () => {
           <div className="relative w-full md:max-w-xl">
             <input
               type="text"
-              placeholder="search_sales"
+              placeholder={t('search_sales')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700"
@@ -116,10 +116,10 @@ const Sales = () => {
                 onChange={(e) => setStatusFilter(e.target.value)}
                 className="appearance-none pl-3 pr-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 w-full"
               >
-                <option value="all_statuses">all_statuses</option>
-                <option value="paid">Paid</option>
-                <option value="pending">Pending</option>
-                <option value="overdue">Overdue</option>
+                <option value="all_statuses">{t('all_statuses')}</option>
+                <option value="paid">{t('completed')}</option>
+                <option value="pending">{t('pending')}</option>
+                <option value="overdue">{t('cancelled')}</option>
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                 <Filter className="h-4 w-4 text-gray-400" />
@@ -132,7 +132,7 @@ const Sales = () => {
 
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center whitespace-nowrap">
               <span className="mr-2">+</span>
-              <span>new_sale</span>
+              <span>{t('add_sale')}</span>
             </button>
           </div>
         </div>
@@ -144,28 +144,28 @@ const Sales = () => {
                 <thead className="bg-gray-50 dark:bg-gray-800">
                   <tr>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      invoice
+                      {t('invoice_no')}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider hidden sm:table-cell">
-                      date
+                      {t('date')}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Customer
+                      {t('customer')}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Amount
+                      {t('amount')}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider hidden lg:table-cell">
                       GST
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider hidden md:table-cell">
-                      payment_mode
+                      {t('payment_mode')}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Status
+                      {t('status')}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Actions
+                      {t('actions')}
                     </th>
                   </tr>
                 </thead>
@@ -199,7 +199,7 @@ const Sales = () => {
                       </td>
                       <td className="px-4 md:px-6 py-4 whitespace-nowrap">
                         <span className={getStatusBadgeClass(sale.status)}>
-                          {sale.status}
+                          {t(sale.status === 'paid' ? 'completed' : sale.status === 'pending' ? 'pending' : 'cancelled')}
                         </span>
                       </td>
                       <td className="px-4 md:px-6 py-4 whitespace-nowrap text-sm font-medium">

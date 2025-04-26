@@ -94,49 +94,49 @@ const GST = () => {
   return (
     <div className="p-4">
       <div className="mb-4">
-        <h1 className="text-xl font-semibold">gst_management</h1>
-        <p className="text-gray-500 dark:text-gray-400">gst_description</p>
+        <h1 className="text-xl font-semibold">{t("gst_management")}</h1>
+        <p className="text-gray-500 dark:text-gray-400">{t("gst_description")}</p>
       </div>
 
       {/* GST Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-4">
-          <p className="text-sm text-gray-500 dark:text-gray-400">current_month_due</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">{t("current_month_due")}</p>
           <h2 className="text-2xl font-bold mt-2">₹15,250</h2>
           <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Due Date: April 20, 2025</p>
         </div>
-        
+
         <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-4">
-          <p className="text-sm text-gray-500 dark:text-gray-400">input_tax_credit</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">{t("input_tax_credit")}</p>
           <h2 className="text-2xl font-bold mt-2">₹12,800</h2>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">available_credit</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{t("available_credit")}</p>
         </div>
-        
+
         <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-4">
-          <p className="text-sm text-gray-500 dark:text-gray-400">net_payable</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">{t("net_payable")}</p>
           <h2 className="text-2xl font-bold mt-2">₹2,450</h2>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">after_input_credit</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{t("after_input_credit")}</p>
         </div>
       </div>
 
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-4">
         <div className="mb-4">
-          <h2 className="text-lg font-semibold">gst_returns</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400">gst_returns_description</p>
+          <h2 className="text-lg font-semibold">{t("gst_returns")}</h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400">{t("gst_returns_description")}</p>
         </div>
 
         <div className="flex flex-wrap gap-2 mb-4">
           <button className="px-3 py-1 text-sm rounded-md bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700">
-            all_returns ({allReturnsCount})
+            {t("all_returns")} ({allReturnsCount})
           </button>
           <button className="px-3 py-1 text-sm rounded-md bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 border">
-            filed ({filedReturnsCount})
+            {t("filed")} ({filedReturnsCount})
           </button>
           <button className="px-3 py-1 text-sm rounded-md bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 border">
-            Pending ({pendingReturnsCount})
+            {t("pending")} ({pendingReturnsCount})
           </button>
           <button className="px-3 py-1 text-sm rounded-md bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 border">
-            overdue ({overdueReturnsCount})
+            {t("overdue")} ({overdueReturnsCount})
           </button>
         </div>
 
@@ -144,7 +144,7 @@ const GST = () => {
           <div className="relative w-full md:max-w-xl">
             <input
               type="text"
-              placeholder="search_returns"
+              placeholder={t("search_returns")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700"
@@ -163,10 +163,10 @@ const GST = () => {
                 onChange={(e) => setStatusFilter(e.target.value)}
                 className="appearance-none pl-3 pr-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 w-full"
               >
-                <option value="all_statuses">all_statuses</option>
-                <option value="filed">Filed</option>
-                <option value="pending">Pending</option>
-                <option value="overdue">Overdue</option>
+                <option value="all_statuses">{t("all_statuses")}</option>
+                <option value="filed">{t("filed")}</option>
+                <option value="pending">{t("pending")}</option>
+                <option value="overdue">{t("overdue")}</option>
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                 <Filter className="h-4 w-4 text-gray-400" />
@@ -176,7 +176,7 @@ const GST = () => {
 
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center whitespace-nowrap">
             <span className="mr-2">+</span>
-            <span>new_return</span>
+            <span>{t("new_return")}</span>
           </button>
         </div>
 
@@ -187,28 +187,28 @@ const GST = () => {
                 <thead className="bg-gray-50 dark:bg-gray-800">
                   <tr>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      return_type
+                      {t("return_type")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Period
+                      {t("period")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Due Date
+                      {t("due_date")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      tax_liability
+                      {t("tax_liability")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      input_credit
+                      {t("input_credit")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      balance
+                      {t("balance")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Status
+                      {t("status")}
                     </th>
                     <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Actions
+                      {t("actions")}
                     </th>
                   </tr>
                 </thead>
@@ -242,7 +242,7 @@ const GST = () => {
                       </td>
                       <td className="px-4 md:px-6 py-4 whitespace-nowrap">
                         <span className={getStatusBadgeClass(gstReturn.status)}>
-                          {gstReturn.status}
+                          {t(gstReturn.status)}
                         </span>
                       </td>
                       <td className="px-4 md:px-6 py-4 whitespace-nowrap text-sm font-medium">

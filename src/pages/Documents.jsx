@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { 
-  Search, 
-  Filter, 
-  RotateCcw, 
-  Upload, 
-  Eye, 
-  Download, 
-  Trash2, 
-  FileText, 
-  FileSpreadsheet, 
-  FileImage, 
+import {
+  Search,
+  Filter,
+  RotateCcw,
+  Upload,
+  Eye,
+  Download,
+  Trash2,
+  FileText,
+  FileSpreadsheet,
+  FileImage,
   File
 } from "lucide-react";
 
@@ -78,9 +78,9 @@ const Documents = () => {
     const matchesSearch = doc.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          doc.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          doc.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-    
+
     const matchesType = typeFilter === "all_types" || doc.type.toLowerCase() === typeFilter.toLowerCase();
-    
+
     return matchesSearch && matchesType;
   });
 
@@ -102,7 +102,7 @@ const Documents = () => {
       registration: "bg-gray-100 text-gray-800",
       certificate: "bg-gray-100 text-gray-800"
     };
-    
+
     return tagColors[tag] || "bg-gray-100 text-gray-800";
   };
 
@@ -130,15 +130,15 @@ const Documents = () => {
     <div className="p-4">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
         <div>
-          <h1 className="text-xl font-semibold">document_management</h1>
-          <p className="text-gray-500 dark:text-gray-400">document_description</p>
+          <h1 className="text-xl font-semibold">{t("document_management")}</h1>
+          <p className="text-gray-500 dark:text-gray-400">{t("document_description")}</p>
         </div>
-        <button 
+        <button
           onClick={handleUpload}
           className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center"
         >
           <Upload className="h-4 w-4 mr-2" />
-          upload_document
+          {t("upload_document")}
         </button>
       </div>
 
@@ -151,7 +151,7 @@ const Documents = () => {
               </div>
               <input
                 type="text"
-                placeholder="search_documents"
+                placeholder={t("search_documents")}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
@@ -164,12 +164,12 @@ const Documents = () => {
                   onChange={(e) => setTypeFilter(e.target.value)}
                   className="appearance-none pl-3 pr-10 py-2 border border-gray-300 rounded-md leading-5 bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 >
-                  <option value="all_types">all_types</option>
-                  <option value="invoice">Invoice</option>
-                  <option value="receipt">Receipt</option>
-                  <option value="contract">Contract</option>
-                  <option value="report">Report</option>
-                  <option value="other">Other</option>
+                  <option value="all_types">{t("all_types")}</option>
+                  <option value="invoice">{t("invoice")}</option>
+                  <option value="receipt">{t("receipt")}</option>
+                  <option value="contract">{t("contract")}</option>
+                  <option value="report">{t("report")}</option>
+                  <option value="other">{t("other")}</option>
                 </select>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                   <Filter className="h-4 w-4 text-gray-400" />
@@ -187,25 +187,25 @@ const Documents = () => {
             <thead className="bg-gray-50 dark:bg-gray-800">
               <tr>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  document
+                  {t("document")}
                 </th>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  type
+                  {t("type")}
                 </th>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  date
+                  {t("date")}
                 </th>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  size
+                  {t("size")}
                 </th>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  uploaded_by
+                  {t("uploaded_by")}
                 </th>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  tags
+                  {t("tags")}
                 </th>
                 <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Actions
+                  {t("actions")}
                 </th>
               </tr>
             </thead>
@@ -241,8 +241,8 @@ const Documents = () => {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex flex-wrap gap-1">
                       {document.tags.map((tag, index) => (
-                        <span 
-                          key={index} 
+                        <span
+                          key={index}
                           className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${getTagColor(tag)}`}
                         >
                           {tag}
@@ -252,19 +252,19 @@ const Documents = () => {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div className="flex justify-end space-x-2">
-                      <button 
+                      <button
                         onClick={() => handleView(document)}
                         className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                       >
                         <Eye className="h-5 w-5" />
                       </button>
-                      <button 
+                      <button
                         onClick={() => handleDownload(document)}
                         className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                       >
                         <Download className="h-5 w-5" />
                       </button>
-                      <button 
+                      <button
                         onClick={() => handleDelete(document)}
                         className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
                       >

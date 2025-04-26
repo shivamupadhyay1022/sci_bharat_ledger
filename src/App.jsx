@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import "./styles/darkTheme.css";
 import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
@@ -15,7 +16,7 @@ import GST from "./pages/GST";
 import Reports from "./pages/Reports";
 import Documents from "./pages/Documents";
 import SmartAI from "./pages/SmartAI";
-import Settings from "./pages/Settings";
+import Settings from "./settings/Settings";
 
 function App() {
   // Apply stored theme on load

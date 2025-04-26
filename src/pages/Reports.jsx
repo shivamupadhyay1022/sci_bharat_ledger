@@ -357,8 +357,8 @@ const Reports = () => {
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
         <div>
-          <h1 className="text-xl font-semibold">Reports</h1>
-          <p className="text-gray-500 dark:text-gray-400">reports_description</p>
+          <h1 className="text-xl font-semibold">{t("reports")}</h1>
+          <p className="text-gray-500 dark:text-gray-400">{t("reports_description")}</p>
         </div>
         <div className="mt-4 md:mt-0 flex items-center">
           <div className="relative">
@@ -367,11 +367,11 @@ const Reports = () => {
               onChange={(e) => setTimeRange(e.target.value)}
               className="appearance-none pl-8 pr-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700"
             >
-              <option value="last_7_days">last_7_days</option>
-              <option value="last_30_days">last_30_days</option>
-              <option value="last_90_days">last_90_days</option>
-              <option value="this_year">this_year</option>
-              <option value="custom">custom_range</option>
+              <option value="last_7_days">{t("last_7_days")}</option>
+              <option value="last_30_days">{t("last_30_days")}</option>
+              <option value="last_90_days">{t("last_90_days")}</option>
+              <option value="this_year">{t("this_year")}</option>
+              <option value="custom">{t("custom_range")}</option>
             </select>
             <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
               <Calendar className="h-4 w-4 text-gray-400" />
@@ -390,7 +390,7 @@ const Reports = () => {
           }`}
           onClick={() => setActiveTab("financial")}
         >
-          financial
+          {t("financial")}
         </button>
         <button
           className={`px-4 py-2 text-sm font-medium ${
@@ -400,7 +400,7 @@ const Reports = () => {
           }`}
           onClick={() => setActiveTab("sales_reports")}
         >
-          sales_reports
+          {t("sales_reports")}
         </button>
         <button
           className={`px-4 py-2 text-sm font-medium ${
@@ -410,7 +410,7 @@ const Reports = () => {
           }`}
           onClick={() => setActiveTab("inventory_reports")}
         >
-          inventory_reports
+          {t("inventory_reports")}
         </button>
         <button
           className={`px-4 py-2 text-sm font-medium ${
@@ -420,7 +420,7 @@ const Reports = () => {
           }`}
           onClick={() => setActiveTab("tax_reports")}
         >
-          tax_reports
+          {t("tax_reports")}
         </button>
       </div>
 
@@ -431,9 +431,9 @@ const Reports = () => {
             <div className="p-6">
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="text-lg font-medium">{report.title}</h3>
+                  <h3 className="text-lg font-medium">{t(report.title)}</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                    {report.description}
+                    {t(report.description)}
                   </p>
                 </div>
                 <div className="bg-blue-50 dark:bg-blue-900/20 p-2 rounded-md">
@@ -455,7 +455,7 @@ const Reports = () => {
                   }`}
                 >
                   <FileText className="h-4 w-4 mr-1" />
-                  {isViewing ? "loading..." : "view"}
+                  {isViewing ? t("loading") : t("view")}
                 </button>
                 <button
                   onClick={() => handleDownload(report.id)}
@@ -467,7 +467,7 @@ const Reports = () => {
                   }`}
                 >
                   <Download className="h-4 w-4 mr-1" />
-                  {isDownloading ? "downloading..." : "download"}
+                  {isDownloading ? t("downloading") : t("download")}
                 </button>
               </div>
             </div>

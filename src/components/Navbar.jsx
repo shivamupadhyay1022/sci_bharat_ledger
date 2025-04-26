@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Moon, Sun, Menu, Bell, Globe } from 'lucide-react';
+import i18n from 'i18next';
 
 function Navbar({toggleSidebar}) {
   const [theme, setTheme] = useState('light');
@@ -32,6 +33,8 @@ function Navbar({toggleSidebar}) {
 
   const changeLanguage = (lang) => {
     console.log(`Language changed to: ${lang}`);
+    i18n.changeLanguage(lang);
+    localStorage.setItem('language', lang);
     setLanguageOpen(false);
   };
 

@@ -138,7 +138,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.25.9"
 
-"@babel/runtime@^7.25.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.25.0", "@babel/runtime@^7.26.10", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
   version "7.27.0"
   resolved "https://registry.npmmirror.com/@babel/runtime/-/runtime-7.27.0.tgz#fbee7cf97c709518ecc1f590984481d5460d4762"
   integrity sha512-VtPOkrdPHZsKc/clNqyi9WUA8TINkZ4cGk63UUE3u4pmB2k+ZMQRDuIOagv8UVd6j7k0T3+RRIb7beKTebNbcw==
@@ -1333,6 +1333,13 @@ html-parse-stringify@^3.0.1:
   integrity sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==
   dependencies:
     void-elements "3.1.0"
+
+i18next@^25.0.1:
+  version "25.0.1"
+  resolved "https://registry.npmmirror.com/i18next/-/i18next-25.0.1.tgz#8870939202299a29fe2c99ea913f8e72db535e31"
+  integrity sha512-8S8PyZbrymJZn3DaN70/34JYWNhsqrU6yA4MuzcygJBv+41dgNMocEA8h+kV1P7MCc1ll03lOTOIXE7mpNCicw==
+  dependencies:
+    "@babel/runtime" "^7.26.10"
 
 ignore@^5.2.0:
   version "5.3.2"

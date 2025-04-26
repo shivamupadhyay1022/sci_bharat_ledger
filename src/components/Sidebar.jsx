@@ -52,11 +52,6 @@ const Sidebar = ({toggleSidebar}) => {
       icon: <BarChart3 className="h-5 w-5" />,
     },
     {
-      path: "/settings",
-      label: t("settings"),
-      icon: <Settings className="h-5 w-5" />,
-    },
-    {
       path: "/documents",
       label: t("documents"),
       icon: <FileText className="h-5 w-5" />,
